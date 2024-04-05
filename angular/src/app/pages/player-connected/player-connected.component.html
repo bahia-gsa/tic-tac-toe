@@ -1,0 +1,53 @@
+<app-index *ngIf="playerName == '' " (nameEntered)="handleNameEntered($event)"></app-index>
+
+<div class="spinnerContainer" *ngIf="playerName != '' && listPlayers.length == 0">
+    <div class="spinner"></div>
+</div>
+
+<div class="page-container" *ngIf="!(openMatch && isMobile) && playerName != '' && listPlayers.length > 0; else openMatchContainerForMobile">
+
+
+    <div class="grid">
+        <div id="item-0">
+            <div class="listPlayer-container">
+                <h2>Players</h2>
+                <div class="listPlayer-itens" *ngFor="let player of listPlayers">
+                    <p>{{player.name}}</p>
+                    <img *ngIf="player.name != playerName" 
+                         (click)="challenge(player.name)" 
+                         src="assets/vs-icon.png" 
+                         alt="" 
+                         title="Challenge {{player.name}}">
+                </div>
+            </div>
+        </div>
+        <div id="item-1">
+            <app-chalenges-loader *ngIf="listChallenges.length == 0"></app-chalenges-loader>
+            <div class="listChallenges-container" *ngIf="listChallenges.length > 0">
+                <h2>Challenges</h2>
+                <div class="listChallenge-itens" *ngFor="let chalange of listChallenges">
+                    <p>{{chalange.name}}</p>
+                    <img src="assets/fight.svg" 
+                        alt=""
+                        title="Accept challenge from {{chalange.name}}" 
+                        (click)="acceptChallenge(chalange.gameId)">
+
+                </div>
+            </div>
+        </div>
+        <div id="item-2">
+            <app-typing-effect *ngIf="!openMatch"></app-typing-effect>
+            <app-match  *ngIf="openMatch" [gameId]="gameId" (gameOver)="checkForGameOver($event)"></app-match>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>
+
+<!-- New container when openMatch and isMobile are true -->
+<ng-template #openMatchContainerForMobile>
+    <div class="openMatchContainerForMobile" *ngIf="playerName != '' && listPlayers.length > 0">
+        <app-match [gameId]="gameId" (gameOver)="checkForGameOver($event)"></app-match>
+    </div>
+</ng-template>
+

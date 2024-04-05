@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'CantoraOne'; 
+  src: url('./assets/fonts/CantoraOne.ttf');
+}
+
+@font-face {
+  font-family: 'Exo2'; 
+  src: url('./assets/fonts/Exo2-VariableFont_wght.ttf');
+}
+
+
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+  width: 100%;
+  color: #00ffb0;
+  background-color: #0b2447;
+  overflow: hidden;
+}
+

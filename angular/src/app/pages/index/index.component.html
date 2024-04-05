@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <form class="form" #nameForm="ngForm" (ngSubmit)="submitForm(nameForm)">
+
+    <h1>Tic-Tac-Toe</h1>
+    <p>Connect to find other players and challenge them to a match.</p>
+  
+    <input type="text" class="input" name="name" placeholder="Enter your username" ngModel required minlength="2" maxlength="18">
+    <div *ngIf="nameForm.controls['name'].invalid && (nameForm.controls['name'].dirty || nameForm.controls['name'].touched)" class="alert">
+      Name must be between 2 and 18 characters.
+    </div>
+    <button [disabled]="!nameForm.valid">Go...</button>
+  </form>
+
+  <app-footer></app-footer>
+  
+</div>

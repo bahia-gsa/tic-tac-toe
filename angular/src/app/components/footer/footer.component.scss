@@ -1,0 +1,17 @@
+span{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #777777;
+}
+
+@media (max-width: 600px) {
+    span{
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
