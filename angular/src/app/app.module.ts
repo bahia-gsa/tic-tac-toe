@@ -12,9 +12,11 @@ import { IndexComponent } from './pages/index/index.component';
 import { PlayerConnectedComponent } from './pages/player-connected/player-connected.component';
 import { MatchComponent } from './pages/match/match.component';
 import {MatIconModule} from "@angular/material/icon";
+import { MatDialogModule } from '@angular/material/dialog';
 import { TypingEffectComponent } from './components/typing-effect/typing-effect.component';
 import { ChalengesLoaderComponent } from './components/chalenges-loader/chalenges-loader.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ReadmeComponent } from './components/readme/readme.component';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { FooterComponent } from './components/footer/footer.component';
     TypingEffectComponent,
     ChalengesLoaderComponent,
     FooterComponent,
+    ReadmeComponent,
     
   ],
     imports: [
@@ -35,7 +38,8 @@ import { FooterComponent } from './components/footer/footer.component';
         BrowserAnimationsModule,
         MatTableModule,
         MatListModule,
-        MatIconModule
+        MatIconModule,
+        MatDialogModule
     ],
   providers: [],
   bootstrap: [AppComponent]

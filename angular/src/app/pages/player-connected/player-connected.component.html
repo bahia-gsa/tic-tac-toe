@@ -2,6 +2,10 @@
 
 <div class="spinnerContainer" *ngIf="playerName != '' && listPlayers.length == 0">
     <div class="spinner"></div>
+    <p>Pour des raisons de coûts, le CPU est alloué uniquement lors des requêtes, ce qui peut causer une latence initiale,
+         surtout après une période d'inactivité. 
+    </p>
+    <p>Merci pour votre patience pendant le chargement initial</p>
 </div>
 
 <div class="page-container" *ngIf="!(openMatch && isMobile) && playerName != '' && listPlayers.length > 0; else openMatchContainerForMobile">
